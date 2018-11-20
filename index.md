@@ -5,4 +5,4 @@ layout: home
 
 This guide explains in detail how to transform your stock Nintendo Switch console to run homebrew applications via Custom Firmware. 
 
-### Small header test.
+### [Get Started](get-started.md)
