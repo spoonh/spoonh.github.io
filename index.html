@@ -1,63 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Online Smash Ultimate Tournaments</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #0f0f0f;
-      color: #fff;
-      padding: 20px;
-    }
-    h1 {
-      text-align: center;
-    }
-    .tournament {
-      background: #1c1c1c;
-      padding: 15px;
-      margin-bottom: 10px;
-      border-radius: 8px;
-    }
-    .date {
-      color: #aaa;
-      font-size: 0.9em;
-    }
-    a {
-      color: #4da6ff;
-      text-decoration: none;
-    }
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Upcoming Online Smash Ultimate Tournaments</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Upcoming Online Smash Ultimate Tournaments</h1>
-  <div id="list">Loading...</div>
+  <header>
+    <h1>Upcoming Online Smash Ultimate Tournaments</h1>
+    <p>Powered by the Start.gg API</p>
+  </header>
 
-  <script>
-    async function loadTournaments() {
-      const res = await fetch("/api/tournaments");
-      const tournaments = await res.json();
+  <main>
+    <section id="auth">
+      <label>Enter your Start.gg API Token: </label>
+      <input type="password" id="apiToken" placeholder="Paste your token here">
+      <button id="loadTournaments">Load Tournaments</button>
+      <p id="status"></p>
+    </section>
+    <section id="tournaments"></section>
+  </main>
 
-      const list = document.getElementById("list");
-      list.innerHTML = "";
+  <footer>
+    <p>Made with ❤️ using the Start.gg API</p>
+  </footer>
 
-      tournaments.forEach(t => {
-        const div = document.createElement("div");
-        div.className = "tournament";
-
-        const date = new Date(t.startAt * 1000).toLocaleString();
-
-        div.innerHTML = `
-          <h3>${t.name}</h3>
-          <div class="date">${date}</div>
-          <a href="https://start.gg${t.url}" target="_blank">View on start.gg</a>
-        `;
-
-        list.appendChild(div);
-      });
-    }
-
-    loadTournaments();
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>

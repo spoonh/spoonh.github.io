@@ -1,0 +1,44 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #121212;
+  color: #f0f0f0;
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
+}
+
+header, footer {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.tournament {
+  border: 1px solid #333;
+  background: #1e1e1e;
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+}
+
+a {
+  color: #00b3ff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+button {
+  margin-top: 10px;
+  background: #00b3ff;
+  border: none;
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #008ecc;
+}
